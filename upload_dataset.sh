@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Putting the resulting link to a file for later reuse
-# curl --upload-file movies.zip https://transfer.sh/movies.zip > dataset_address.txt
+curl --upload-file movies.zip https://transfer.sh/movies.zip > dataset_address.txt
 
 # get variables
 . .hadoop
