@@ -13,3 +13,6 @@ sshpass -p "$pass" ssh "$login@127.0.0.1" -p 2222 'bash -s' < upload_dataset_aux
 echo 'Returned to local machine successfuly.'
 
 exit
+
+# TODO(blake): Try to fit all uploading into 1 script with the thing below
+# VAR=$(curl --data "text=this is a secret pw" https://file.io)
