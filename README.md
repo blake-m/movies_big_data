@@ -2,9 +2,13 @@
 A collection of quick and not in-depth analysis and scripts of movies data set using various big data technologies.
 
 ### Technologies used:
-\+ files corresponding to each technology
 
-- BASH command language: upload_dataset.sh; upload_dataset_auxiliary.sh
+- BASH
+- POSTGRESQL
+- MAPREDUCE (via MRJob Python library)
+- PIG
+- HIVE
+
 
 ### Dataset used:
 ##### The Movies Dataset

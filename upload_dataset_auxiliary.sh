@@ -2,7 +2,8 @@
 
 cd ~
 LINK=$(cat dataset_address.txt) # already there
-mkdir "movie_db" && cd movie_db/
+mkdir "movie_db"
+cd movie_db/
 echo "Retrieving: $LINK" && wget $LINK
 
 
