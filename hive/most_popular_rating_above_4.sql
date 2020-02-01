@@ -16,7 +16,8 @@ SELECT
 	r.count_rating
 FROM most_popular_movies r
 INNER JOIN moviesmetadata m
-	ON r.movieid = m.id;
+	ON r.movieid = m.id
+ORDER BY r.avg_rating DESC;
 
 -------------------
 SELECT
