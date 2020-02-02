@@ -3,12 +3,12 @@ from typing import Union
 
 import starbase
 
-StarbaseConnection = starbase.client.connection.Connection
-StarbaseTable = starbase.client.table.Table
+_StarbaseConnection = starbase.client.connection.Connection
+_StarbaseTable = starbase.client.table.Table
 
 
 def establish_and_return_hbase_connection(
-        ip: str = "127.0.0.1", port: str = "8000") -> StarbaseConnection:
+        ip: str = "127.0.0.1", port: str = "8000") -> _StarbaseConnection:
     """Establishes HBase RESTful connection using starbase library."""
     print("Establishing connection with {}:{}".format(ip, port))
     conn = starbase.Connection(ip, port)
@@ -17,7 +17,7 @@ def establish_and_return_hbase_connection(
 
 
 def create_hbase_table(
-        conn: StarbaseConnection, table_name: str) -> StarbaseTable:
+        conn: _StarbaseConnection, table_name: str) -> _StarbaseTable:
     """Creates an HBase table with specified name. Drops such table if it
     exists already."""
     table = conn.table(table_name)
@@ -28,13 +28,13 @@ def create_hbase_table(
     return table
 
 
-def create_column_family(table: StarbaseTable, family_name: str) -> None:
+def create_column_family(table: _StarbaseTable, family_name: str) -> None:
     """Creates a column family for a specified HBase table."""
     table.create(family_name)
 
 
 def add_data_to_hbase_table_in_a_batch(
-        table: StarbaseTable, data_set_path: str) -> None:
+        table: _StarbaseTable, data_set_path: str) -> None:
     """Creates a batch containing data and uploads it to HBase table.
 
     Reads a file and line by line adds data to the batch. Using a batch makes
@@ -51,7 +51,7 @@ def add_data_to_hbase_table_in_a_batch(
     print("\tAdded.\n")
 
 
-def fetch_hbase_row_and_print_it(table: StarbaseTable, key: Union[str, int]) -> None:
+def fetch_hbase_row_and_print_it(table: _StarbaseTable, key: Union[str, int]) -> None:
     print("Results for key '{}':".format(key))
     if type(key) == int:
         print(table.fetch(int(key)))
