@@ -1,4 +1,8 @@
-"""This script imports ratings_small.csv data set to HBase."""
+"""This script imports ratings_small.csv data set to HBase.
+
+HBase connection must be open for this script to be successful at ip and port
+specified in 'establish_and_return_hbase_connection' function.
+"""
 from typing import Union
 
 import starbase
@@ -31,6 +35,7 @@ def create_hbase_table(
 def create_column_family(table: _StarbaseTable, family_name: str) -> None:
     """Creates a column family for a specified HBase table."""
     table.create(family_name)
+    print("Column Family '{}' created.".format(family_name))
 
 
 def add_data_to_hbase_table_in_a_batch(
