@@ -6,8 +6,8 @@
 .idea/*
 movies.zip
 the-movies-dataset
-./python/spark_tests
-./spark/.ipynb_checkpoints
+python/spark_tests
+spark/.ipynb_checkpoints
 
 
 
