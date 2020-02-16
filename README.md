@@ -8,6 +8,8 @@ A collection of quick and not in-depth analysis and scripts of movies data set u
 - MAPREDUCE (via MRJob Python library)
 - PIG
 - HIVE
+- HBASE
+- SPARK
 
 
 ### Dataset used:
